@@ -10,3 +10,22 @@
  * <your description here>
  *-----------------------------------------------------------------------------
 */
+#include "stopwatch.h"
+#include <stdlib.h>
+
+void start_stopwatch()
+{
+
+}
+void stop_stopwatch()
+{
+
+}
+int elapsed_time()
+{
+
+}
+void sleep(int count)
+{
+  
+}
