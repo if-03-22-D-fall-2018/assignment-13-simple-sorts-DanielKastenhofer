@@ -13,19 +13,23 @@
 #include "stopwatch.h"
 #include <stdlib.h>
 
+float startTime;
+float stopTime;
+
 void start_stopwatch()
 {
-
+  startTime = clock();
 }
+
 void stop_stopwatch()
 {
-
+  stopTime = clock();
 }
+
 int elapsed_time()
 {
-
-}
-void sleep(int count)
-{
-  
+  if(stopTime < startTime){
+    return clock() - startTime;
+  }
+return stopTime - startTime;
 }

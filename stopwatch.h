@@ -12,6 +12,8 @@
  */
 #ifndef ___STOPWATCH_H
 #define ___STOPWATCH_H
+#include <time.h>
+#include <stdio.h>
 
 /**
 *** @file stopwatch.h
@@ -42,6 +44,5 @@
 void start_stopwatch();
 void stop_stopwatch();
 int elapsed_time();
-void sleep(int count);
 
 #endif

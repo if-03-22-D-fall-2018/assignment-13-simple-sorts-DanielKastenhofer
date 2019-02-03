@@ -24,13 +24,33 @@ void init_random(int *array, unsigned long length)
 
 void bubble_sort(int array[], int size)
 {
+	bool elements_were_swapped;
+	int last_unsorted_element = size - 1;
+	do {
+
+			elements_were_swapped = false;
+
+			for (int j = 0; j < last_unsorted_element; j++) {
+
+					if (array[j] > array[j + 1]) {
+						int temp = array[j+1];
+						array[j+1] = array[j];
+						array[j] = temp;
+						elements_were_swapped = true;
+					}
+				}
+			last_unsorted_element--;
+
+	} while (elements_were_swapped);
 
 }
 void insertion_sort(int array[], int size)
 {
+	int key;
+	int j;
   for (int i = 0; i < size; i++) {
-    int key = array[i];
-    int j = i-1;
+    key = array[i];
+    j = i-1;
     while (j>=0 && array[j] >key) {
       array[j+1] = array[j];
       j--;
