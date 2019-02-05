@@ -43,6 +43,6 @@
 
 void start_stopwatch();
 void stop_stopwatch();
-int elapsed_time();
+float elapsed_time();
 
 #endif

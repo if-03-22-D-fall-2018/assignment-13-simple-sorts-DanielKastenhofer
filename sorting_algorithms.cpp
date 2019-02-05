@@ -24,37 +24,33 @@ void init_random(int *array, unsigned long length)
 
 void bubble_sort(int array[], int size)
 {
-	bool elements_were_swapped;
-	int last_unsorted_element = size - 1;
+	bool were_swapped;
 	do {
-
-			elements_were_swapped = false;
-
-			for (int j = 0; j < last_unsorted_element; j++) {
-
-					if (array[j] > array[j + 1]) {
-						int temp = array[j+1];
-						array[j+1] = array[j];
-						array[j] = temp;
-						elements_were_swapped = true;
-					}
-				}
-			last_unsorted_element--;
-
-	} while (elements_were_swapped);
-
+		were_swapped = false;
+		for (int i = 0; i < size; i++) {
+			if (array[i] > array[i+1]) {
+				int temp = array[i];
+				array[i] = array[i + 1];
+				array[i + 1] = temp;
+				were_swapped = true;
+			}
+		}
+	} while(were_swapped);
 }
+
+
 void insertion_sort(int array[], int size)
 {
-	int key;
-	int j;
-  for (int i = 0; i < size; i++) {
-    key = array[i];
-    j = i-1;
-    while (j>=0 && array[j] >key) {
-      array[j+1] = array[j];
-      j--;
-  }
-}
-  array[j+1] = key;
+	int toSwap;
+	int toCompare;
+
+	for (int i = 0; i < size; i++) {
+		toSwap = array[i];
+		toCompare = i - 1;
+		while (toCompare >= 0 && array[toCompare] > toSwap) {
+			array[toCompare + 1] = array[toCompare];
+			toCompare--;
+		}
+	}
+	array[toCompare + 1] = toSwap;
 }

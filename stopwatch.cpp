@@ -26,10 +26,10 @@ void stop_stopwatch()
   stopTime = clock();
 }
 
-int elapsed_time()
+float elapsed_time()
 {
   if(stopTime < startTime){
-    return clock() - startTime;
+    return (clock() - startTime) / CLOCKS_PER_SEC;
   }
-return stopTime - startTime;
+return (stopTime - startTime) / CLOCKS_PER_SEC;
 }
